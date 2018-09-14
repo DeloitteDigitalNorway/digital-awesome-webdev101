@@ -1,8 +1,7 @@
 // Dependencies
 import React from 'react';
 import { renderToStaticMarkup, renderToString } from 'react-dom/server';
-import Helmet from 'react-helmet';
-import App from '../../client/components/App';
+import App from '../../client/components/Root';
 import Html from '../components/Html';
 
 // Add hot reloading
@@ -32,18 +31,8 @@ export default (stats, assets, preload = []) => {
   // Return react rendering middleware
   return function renderReact(req, res) {
     const body = renderToString(<App />);
-    const helmet = Helmet.renderStatic();
     const html = renderToStaticMarkup(
       <Html
-        htmlAttributes={helmet.htmlAttributes.toComponent()}
-        bodyAttributes={helmet.bodyAttributes.toComponent()}
-        title={helmet.title.toComponent()}
-        meta={helmet.meta.toComponent()}
-        link={helmet.link.toComponent()}
-        style={helmet.style.toComponent()}
-        script={helmet.script.toComponent()}
-        noscript={helmet.noscript.toComponent()}
-        base={helmet.base.toComponent()}
         body={body}
         bundleJs={bundleJs}
         bundleCss={bundleCss}

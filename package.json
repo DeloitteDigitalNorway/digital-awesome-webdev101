@@ -24,10 +24,10 @@
     "@babel/runtime": "^7.0.0",
     "core-js": "^2.5.7",
     "express": "^4.16.3",
+    "pirate-speak": "^1.0.1",
     "prop-types": "^15.6.2",
     "react": "^16.4.2",
     "react-dom": "^16.4.2",
-    "react-helmet": "^5.2.0",
     "react-hot-loader": "^4.3.4",
     "serialize-javascript": "^1.4.0",
     "source-map-support": "^0.5.6"

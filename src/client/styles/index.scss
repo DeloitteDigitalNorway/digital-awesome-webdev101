@@ -1,0 +1,19 @@
+@import url('~normalize.css');
+
+html {
+  background-color: #49aa6a;
+}
+body {
+  width: 100%;
+}
+
+// App container
+.App {
+  display: flex;
+  flex-direction: row;
+  margin: 0 auto;
+  max-width: 1200px;
+}
+
+@import './styles/Monitor';
+@import './styles/SpeachBubble';

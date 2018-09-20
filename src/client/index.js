@@ -1,13 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './components/Root';
-import { unregister } from './serviceWorker';
 
 // Styles
-import './sass/index.scss';
-
-// Init
-window.addEventListener('load', unregister);
+import './styles/index.scss';
 
 // Render app and perform necessary housekeeping
 const render = () => {

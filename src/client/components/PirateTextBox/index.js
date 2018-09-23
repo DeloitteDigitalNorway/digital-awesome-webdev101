@@ -14,7 +14,7 @@ class PirateTextBox extends PureComponent {
     let otherUpdate = null;
 
     for(var propt in update){
-      if(propt !== userID && propt !== '') {
+      if(propt !== userID && update[propt] !== '') {
         otherUpdate = <SpeachBubble text={translate('...')} classnames={'left update'}/>;
         break;
       }

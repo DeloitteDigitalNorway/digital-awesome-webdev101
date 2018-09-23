@@ -2,15 +2,11 @@ import React, { PureComponent } from 'react';
 import PirateTextBox from './../PirateTextBox';
 
 class SpeachBubble extends PureComponent {
-  state = {
-    text: 'Cash rules everything around me C.R.E.A.M. get the money!',
-  };
-  updateText = (event) => this.setState({ text: event.target.value });
   render() {
     const text = this.props.text;
-    const pos = this.props.pos;
+    const classnames = this.props.classnames;
     return (
-      <div className={`SpeachBubble ${pos}`}>
+      <div className={`SpeachBubble ${classnames}`}>
         { text }
       </div>
     );

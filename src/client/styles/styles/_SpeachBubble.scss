@@ -27,6 +27,19 @@
 	margin-left: -20px;
 }
 
+.SpeachBubble.update {
+	font-size: 30px;
+	line-height: 40px;
+	padding: 5px 15px;
+  animation: dotAnimation 1s linear infinite alternate;
+}
+
+@keyframes dotAnimation {
+  0%   	{ color: pink; letter-spacing: 2px }
+  33%   { color: indigo; letter-spacing: 4px }
+  66% 	{ color: blue; letter-spacing: 2px }
+}
+
 .SpeachBubble.right {
   background: lightblue;
   left: 8%;

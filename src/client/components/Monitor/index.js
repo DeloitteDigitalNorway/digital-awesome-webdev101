@@ -2,26 +2,31 @@ import React, { PureComponent } from 'react';
 import PirateTextBox from './../PirateTextBox';
 
 class Monitor extends PureComponent {
-  state = {
-    text: 'Cash rules everything around me C.R.E.A.M. get the money!',
-  };
-  updateText = (event) => this.setState({ text: event.target.value });
+  updateText = (event) => {
+    const { onUpdate, userID } = this.props;
+    onUpdate(event.target.value, userID)
+  }
+
   render() {
+    const pos = this.props.pos;
+    const update = this.props.update;
+    const history = this.props.history;
     const userID = this.props.userID;
 
-    const text = this.state.text;
     return (
       <div id={userID} className='Monitor'>
         <h1 className="header"/>
 
         <PirateTextBox
-          text={text}
+          userID={userID}
+          update={update}
+          history={history}
         />
 
         <div className="top-box">
-          <textarea value={text} onChange={this.updateText}/>
+          <textarea value={update[userID]} onChange={this.updateText}/>
         </div>
-        
+
       </div>
     );
   }

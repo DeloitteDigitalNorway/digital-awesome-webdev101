@@ -23,7 +23,7 @@ class PirateTextBox extends PureComponent {
       <div className="pirate-text-box">
 
         {
-          history.map((val, key) => <SpeachBubble key={key} text={translate(val.text)} classnames={`${val.userID === userID ? 'left' : 'right'} final`} />)
+          history.map((val, key) => <SpeachBubble key={key} text={translate(val.text)} classnames={`${val.userID === userID ? 'right' : 'left'} final`} />)
         }
 
         {

@@ -29,6 +29,7 @@
     "react": "^16.4.2",
     "react-dom": "^16.4.2",
     "react-hot-loader": "^4.3.4",
+    "react-transition-group": "^2.4.0",
     "serialize-javascript": "^1.4.0",
     "source-map-support": "^0.5.6"
   },

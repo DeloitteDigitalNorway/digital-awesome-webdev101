@@ -2,20 +2,25 @@
 	position: relative;
 	background: #00aabb;
 	border-radius: 20px;
-  width: 80%;
+  width: 90%;
   padding: 5%;
   margin: 5% 0;
 }
 
 .SpeachBubble.left {
   background: pink;
-  left: 2%;
+  left: 0%;
 }
 
-.SpeachBubble.left:after {
+.SpeachBubble.left.final {
+	width: 80%;
+	left: 2%;
+}
+
+.SpeachBubble.left.final:after {
   content: '';
 	position: absolute;
-	left: 0;
+	left: 2px;
 	top: 50%;
 	width: 0;
 	height: 0;
@@ -42,13 +47,18 @@
 
 .SpeachBubble.right {
   background: lightblue;
-  left: 8%;
+  left: 0%;
 }
 
-.SpeachBubble.right:after {
+.SpeachBubble.right.final {
+	width: 80%;
+	left: 8%;
+}
+
+.SpeachBubble.right.final:after {
   content: '';
 	position: absolute;
-	right: 0;
+	right: 2px;
 	top: 50%;
 	width: 0;
 	height: 0;

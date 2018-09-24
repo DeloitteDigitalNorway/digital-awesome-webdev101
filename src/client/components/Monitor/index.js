@@ -8,10 +8,7 @@ class Monitor extends PureComponent {
   }
 
   render() {
-    const pos = this.props.pos;
-    const update = this.props.update;
-    const history = this.props.history;
-    const userID = this.props.userID;
+    const { update, history, userID} = this.props;
 
     return (
       <div id={userID} className='Monitor'>
@@ -24,7 +21,7 @@ class Monitor extends PureComponent {
         />
 
         <div className="top-box">
-          <textarea value={update[userID]} onChange={this.updateText}/>
+          <textarea value={update[userID] ? update[userID] : ''} onChange={this.updateText}/>
         </div>
 
       </div>

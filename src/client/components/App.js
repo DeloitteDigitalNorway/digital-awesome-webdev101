@@ -8,7 +8,37 @@ class App extends PureComponent {
     this.state = {
       update: {},
       history: [],
+      currentUserTyping: null,
     }
+  }
+
+  componentDidMount = () => {
+    // Listen for the enter key press.
+    document.addEventListener( 'keyup', this.onKeyUp);
+  }
+
+  onKeyUp = (e) => {
+    if ( e.keyCode == 13 ) {
+      const { update, history, currentUserTyping } = this.state;
+      const prevUpdate = Object.assign({}, update);
+
+      if (currentUserTyping && prevUpdate[currentUserTyping]) {
+        history.push({
+          userID: currentUserTyping,
+          text: prevUpdate[currentUserTyping],
+        });
+        delete prevUpdate[currentUserTyping];
+
+        this.setState({
+          history,
+          update: prevUpdate,
+        })
+      }
+    }
+  }
+
+  componentWillUnmount = () => {
+    document.removeEventListener('keyup', this.onKeyDown);
   }
 
   onUpdate = (text, userID) => {
@@ -17,15 +47,7 @@ class App extends PureComponent {
 
     this.setState({
       update,
-    })
-  }
-
-  onSave = (text, userID) => {
-    const { history } = this.state;
-    history.push({userID, text});
-
-    this.setState({
-      history,
+      currentUserTyping: userID,
     })
   }
 
@@ -39,14 +61,12 @@ class App extends PureComponent {
           update={update}
           history={history}
           onUpdate={(val, userID) => this.onUpdate(val, userID)}
-          onSave={ pos => this.onSave(pos)}
         />
         <Monitor
           userID='user_02'
           update={update}
           history={history}
           onUpdate={(text, userID) => this.onUpdate(text, userID)}
-          onSave={ (text, userID) => this.onSave(text, userID)}
         />
       </div>
     );

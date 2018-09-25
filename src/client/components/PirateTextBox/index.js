@@ -4,10 +4,18 @@ import SpeachBubble from './../SpeachBubble';
 
 class PirateTextBox extends PureComponent {
   render() {
+    const { update, userID } = this.props;
+
+    const selfUpdate = update[userID]
+    ? <SpeachBubble text={update[userID]} />
+    : null;
+
     return (
       <div className='pirate-text-box'>
-        <SpeachBubble />
-        <SpeachBubble />
+        { selfUpdate
+          ? selfUpdate
+          : null
+        }
       </div>
     );
   }

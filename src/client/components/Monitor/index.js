@@ -3,20 +3,24 @@ import PirateTextBox from './../PirateTextBox';
 
 class Monitor extends PureComponent {
   updateText = (event) => {
-    console.log(event.target.value)
+    const { onUpdate, userID } = this.props;
+    onUpdate(event.target.value, userID);
   }
 
   render() {
-    const userID = this.props.userID;
+    const { update, userID} = this.props;
 
     return (
       <div id={userID} className='Monitor'>
         <h1 className="header" />
 
-        <PirateTextBox />
+        <PirateTextBox
+          userID={userID}
+          update={update}
+        />
 
         <div className="top-box">
-          <textarea onChange={this.updateText}/>
+          <textarea value={update[userID] ? update[userID] : ''} onChange={this.updateText}/>
         </div>
       </div>
     );

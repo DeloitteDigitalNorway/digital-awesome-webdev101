@@ -1,10 +1,11 @@
 import React, { PureComponent } from 'react';
+import Monitor from './Monitor';
 
 class App extends PureComponent {
   render() {
     return (
       <div className="App">
-        Awesome 101
+        <Monitor />
       </div>
     );
   }

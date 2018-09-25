@@ -6,6 +6,9 @@
   flex-direction: column;
   align-items: center;
 
+  font-family: 'treasure_map_deadhandregular', 'Verdana';
+  font-size: 30px;
+
   .header {
     display: block;
     height: 20%;
@@ -16,15 +19,15 @@
   &#user_01 {
     background-color: pink;
     .header {
-      background: url('../../assets/penguin-left.svg') no-repeat center;
+      background: url('../../assets/images/penguin-left.svg') no-repeat center;
     }
   }
 
   &#user_02 {
     background-color: lightblue;
     .header {
-      background: url('../../assets/penguin-right.svg') no-repeat center;
-    }  
+      background: url('../../assets/images/penguin-right.svg') no-repeat center;
+    }
   }
 
   .pirate-text-box, .top-box {
@@ -47,6 +50,7 @@
     padding: 3%;
 
     textarea {
+      font-family: 'Verdana', 'Sans-serif';
       width: 100%;
       height: 100%;
       border-radius: 20px;

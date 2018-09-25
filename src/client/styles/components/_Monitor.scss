@@ -15,4 +15,45 @@
     background-color: lightblue;
   }
 
+  .header {
+    text-align: center;
+    height: 20%;
+    width: 100%;
+  }
+
+  .pirate-text-box, .top-box {
+    background-color: white;
+    border-radius: 20px;
+  }
+
+  .pirate-text-box {
+    overflow-x: hidden;
+    overflow-y: auto;
+    width: 70%;
+    height: 50%;
+    padding: 5%;
+  }
+
+  .top-box {
+    margin-top: 5%;
+    width: 74%;
+    height: 10%;
+    padding: 3%;
+
+    textarea {
+      font-family: 'Verdana', 'Sans-serif';
+      width: 100%;
+      height: 100%;
+      border-radius: 20px;
+      background-color: rgba(240, 240, 240, 1);
+      padding: 5%;
+
+      // clear
+      border: none;
+      overflow: hidden;
+      outline: none;
+      box-shadow: none;
+      resize: none;
+    }
+  }
 }

@@ -10,7 +10,11 @@ class Monitor extends PureComponent {
 
     return (
       <div id={userID} className='Monitor'>
-        <h1 className="header">Pirrrate</h1>
+        <h1 className="header">Pirrrate Chat</h1>
+
+        <div className='pirate-text-box'>
+
+        </div>
 
         <div className="top-box">
           <textarea onChange={this.updateText}/>

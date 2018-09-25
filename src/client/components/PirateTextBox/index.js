@@ -1,7 +1,10 @@
 import React, { PureComponent } from 'react';
 import { translate } from 'pirate-speak';
 import SpeachBubble from './../SpeachBubble';
-
+import {
+  CSSTransition,
+  TransitionGroup,
+} from 'react-transition-group';
 class PirateTextBox extends PureComponent {
   render() {
     const { update, history, userID } = this.props;
@@ -20,24 +23,30 @@ class PirateTextBox extends PureComponent {
     }
 
     return (
-      <div className='pirate-text-box'>
+      <TransitionGroup className='pirate-text-box'>
         {
           history.map((val, key) => (
-            <SpeachBubble key={key} text={translate(val.text)} classnames={`${val.userID === userID ? 'right' : 'left'} final`} />
+            <CSSTransition key={key} timeout={1000} classNames="fade">
+                <SpeachBubble key={key} text={translate(val.text)} classnames={`${val.userID === userID ? 'right' : 'left'} final`} />
+            </CSSTransition>
           ))
         }
 
         { selfUpdate
-          ? selfUpdate
+          ? <CSSTransition timeout={500} classNames="fastFade">
+            {selfUpdate}
+            </CSSTransition>
           : null
         }
 
         {
           otherUpdate
-          ? otherUpdate
+          ? <CSSTransition timeout={500} classNames="fastFade">
+          {otherUpdate}
+          </CSSTransition>
           : null
         }
-      </div>
+      </TransitionGroup>
     );
   }
 }

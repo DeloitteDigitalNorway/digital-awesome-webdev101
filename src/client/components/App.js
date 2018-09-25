@@ -23,16 +23,21 @@ class App extends PureComponent {
       const prevUpdate = Object.assign({}, update);
 
       if (currentUserTyping && prevUpdate[currentUserTyping]) {
-        history.push({
-          userID: currentUserTyping,
-          text: prevUpdate[currentUserTyping],
-        });
-        delete prevUpdate[currentUserTyping];
 
-        this.setState({
-          history,
-          update: prevUpdate,
-        })
+        console.log(prevUpdate[currentUserTyping].length)
+
+        if (prevUpdate[currentUserTyping].trim().length > 0) {
+          history.push({
+            userID: currentUserTyping,
+            text: prevUpdate[currentUserTyping],
+          });
+          delete prevUpdate[currentUserTyping];
+
+          this.setState({
+            history,
+            update: prevUpdate,
+          })
+        }
       }
     }
   }

@@ -4,7 +4,7 @@ import PirateTextBox from './../PirateTextBox';
 class Monitor extends PureComponent {
   updateText = (event) => {
     const { onUpdate, userID } = this.props;
-    onUpdate(event.target.value, userID)
+    onUpdate(event.target.value, userID);
   }
 
   render() {

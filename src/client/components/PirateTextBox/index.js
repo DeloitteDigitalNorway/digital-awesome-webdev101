@@ -7,14 +7,14 @@ class PirateTextBox extends PureComponent {
     const { update, history, userID } = this.props;
 
     const selfUpdate = update[userID]
-    ? <SpeachBubble text={update[userID]} />
+    ? <SpeachBubble text={translate(update[userID])} />
     : null;
 
     let otherUpdate = null;
 
     for(var propt in update){
       if(propt !== userID && update[propt] !== '') {
-        otherUpdate = <SpeachBubble text={translate('...')} classnames={'left update'}/>;
+        otherUpdate = <SpeachBubble text={'...'} classnames={'left update'}/>;
         break;
       }
     }
@@ -23,7 +23,7 @@ class PirateTextBox extends PureComponent {
       <div className='pirate-text-box'>
         {
           history.map((val, key) => (
-            <SpeachBubble key={key} text={val.text} />
+            <SpeachBubble key={key} text={translate(val.text)} />
           ))
         }
 

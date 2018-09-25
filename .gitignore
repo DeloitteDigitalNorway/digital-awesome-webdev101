@@ -1,6 +1,6 @@
 # Dont store hidden files and directories by default
 .*
-
+*.jar
 # Exceptions
 !.babelrc*
 !.browserslistrc

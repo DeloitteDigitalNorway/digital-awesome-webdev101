@@ -1,10 +1,20 @@
 import React, { PureComponent } from 'react';
 
 class Monitor extends PureComponent {
+  updateText = (event) => {
+    console.log(event.target.value)
+  }
+
   render() {
+    const userID = this.props.userID;
+
     return (
-      <div className='Monitor'>
+      <div id={userID} className='Monitor'>
         <h1 className="header">Pirrrate</h1>
+
+        <div className="top-box">
+          <textarea onChange={this.updateText}/>
+        </div>
       </div>
     );
   }

@@ -5,7 +5,12 @@ class App extends PureComponent {
   render() {
     return (
       <div className="App">
-        <Monitor />
+        <Monitor
+          userID='user_01'
+        />
+        <Monitor
+          userID='user_02'
+        />
       </div>
     );
   }

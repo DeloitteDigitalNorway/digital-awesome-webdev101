@@ -8,7 +8,7 @@ class Monitor extends PureComponent {
   }
 
   render() {
-    const { update, userID} = this.props;
+    const { update, history, userID} = this.props;
 
     return (
       <div id={userID} className='Monitor'>
@@ -17,6 +17,7 @@ class Monitor extends PureComponent {
         <PirateTextBox
           userID={userID}
           update={update}
+          history={history}
         />
 
         <div className="top-box">

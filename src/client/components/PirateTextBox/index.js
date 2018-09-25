@@ -4,7 +4,7 @@ import SpeachBubble from './../SpeachBubble';
 
 class PirateTextBox extends PureComponent {
   render() {
-    const { update, userID } = this.props;
+    const { update, history, userID } = this.props;
 
     const selfUpdate = update[userID]
     ? <SpeachBubble text={update[userID]} />
@@ -21,6 +21,12 @@ class PirateTextBox extends PureComponent {
 
     return (
       <div className='pirate-text-box'>
+        {
+          history.map((val, key) => (
+            <SpeachBubble key={key} text={val.text} />
+          ))
+        }
+
         { selfUpdate
           ? selfUpdate
           : null

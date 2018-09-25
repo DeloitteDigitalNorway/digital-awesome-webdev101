@@ -1,4 +1,5 @@
 import React, { PureComponent } from 'react';
+import PirateTextBox from './../PirateTextBox';
 
 class Monitor extends PureComponent {
   updateText = (event) => {
@@ -10,11 +11,9 @@ class Monitor extends PureComponent {
 
     return (
       <div id={userID} className='Monitor'>
-        <h1 className="header">Pirrrate Chat</h1>
+        <h1 className="header" />
 
-        <div className='pirate-text-box'>
-
-        </div>
+        <PirateTextBox />
 
         <div className="top-box">
           <textarea onChange={this.updateText}/>

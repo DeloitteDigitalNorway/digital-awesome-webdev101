@@ -6,3 +6,29 @@
   padding: 5%;
   margin: 5% 0;
 }
+
+.SpeachBubble.update {
+	font-size: 30px;
+	line-height: 40px;
+	padding: 5px 15px;
+}
+
+.SpeachBubble.left {
+  background: pink;
+  left: 0%;
+}
+
+.SpeachBubble.left.final {
+	width: 80%;
+	left: 2%;
+}
+
+.SpeachBubble.right {
+  background: lightblue;
+  left: 0%;
+}
+
+.SpeachBubble.right.final {
+	width: 80%;
+	left: 8%;
+}

@@ -2,9 +2,9 @@ import React, { PureComponent } from 'react';
 
 class SpeachBubble extends PureComponent {
   render() {
-    const { text } = this.props;
+    const { text, classnames } = this.props;
     return (
-      <div className='SpeachBubble'>
+      <div className={`SpeachBubble ${classnames}`}>
         { text }
       </div>
     );

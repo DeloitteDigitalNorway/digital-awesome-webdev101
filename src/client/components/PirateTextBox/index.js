@@ -1,5 +1,4 @@
 import React, { PureComponent } from 'react';
-import { translate } from 'pirate-speak';
 import SpeachBubble from './../SpeachBubble';
 
 class PirateTextBox extends PureComponent {
@@ -14,7 +13,7 @@ class PirateTextBox extends PureComponent {
 
     for(var propt in update){
       if(propt !== userID && update[propt] !== '') {
-        otherUpdate = <SpeachBubble text={translate('...')} classnames={'left update'}/>;
+        otherUpdate = <SpeachBubble text={'...'} classnames={'left update'}/>;
         break;
       }
     }

@@ -1,5 +1,4 @@
 import React, { PureComponent } from 'react';
-import { translate } from 'pirate-speak';
 import SpeachBubble from './../SpeachBubble';
 
 class PirateTextBox extends PureComponent {
@@ -26,17 +25,8 @@ class PirateTextBox extends PureComponent {
             <SpeachBubble key={key} text={translate(val.text)} />
           ))
         }
-
-        { selfUpdate
-          ? selfUpdate
-          : null
-        }
-
-        {
-          otherUpdate
-          ? otherUpdate
-          : null
-        }
+        { selfUpdate }
+        { otherUpdate }
       </div>
     );
   }

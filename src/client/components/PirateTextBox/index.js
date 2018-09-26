@@ -1,5 +1,4 @@
 import React, { PureComponent } from 'react';
-import { translate } from 'pirate-speak';
 
 class PirateTextBox extends PureComponent {
   render() {

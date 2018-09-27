@@ -15,7 +15,7 @@
 }
 
 .SpeachBubble.left {
-  background: pink;
+  background: #e10a17;
   left: 0%;
 }
 
@@ -25,7 +25,7 @@
 }
 
 .SpeachBubble.right {
-  background: lightblue;
+  background: #081fe0;
   left: 0%;
 }
 
@@ -42,7 +42,7 @@
 	width: 0;
 	height: 0;
 	border: 20px solid transparent;
-	border-right-color: pink;
+	border-right-color: #e10a17;
 	border-left: 0;
 	border-bottom: 0;
 	margin-top: -10px;
@@ -57,7 +57,7 @@
 	width: 0;
 	height: 0;
 	border: 20px solid transparent;
-	border-left-color: lightblue;
+	border-left-color: #081fe0;
 	border-right: 0;
 	border-bottom: 0;
 	margin-top: -10px;

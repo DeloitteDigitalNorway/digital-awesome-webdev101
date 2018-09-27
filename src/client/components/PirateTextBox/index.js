@@ -5,7 +5,20 @@ import {
   CSSTransition,
   TransitionGroup,
 } from 'react-transition-group';
+import * as ReactDOM from 'react-dom'
 class PirateTextBox extends PureComponent {
+
+  constructor(props) {
+    super(props);
+    this.ref = React.createRef();
+  }
+
+  componentDidUpdate(prevProps) {
+    if (this.props !== prevProps) {
+      ReactDOM.findDOMNode(this.ref.current).scrollTo(0, 0);
+    }
+  }
+
   render() {
     const { update, history, userID } = this.props;
 
@@ -26,16 +39,15 @@ class PirateTextBox extends PureComponent {
     }
 
     return (
-      <TransitionGroup className='pirate-text-box'>
+      <TransitionGroup className='pirate-text-box' ref={this.ref}>
         {
           history.map((val, key) => (
             <CSSTransition key={key} timeout={1000} classNames="fade">
-                <SpeachBubble key={key} text={translate(val.text)} classnames={`${val.userID === userID ? 'right' : 'left'} final`} />
+                <SpeachBubble key={key} text={translate(val.text)} classnames={`${val.userID === this.props.userID ? 'right' : 'left'} final`} />
             </CSSTransition>
           ))
         }
 
-        { selfUpdate }
         { otherUpdate}
       </TransitionGroup>
     );

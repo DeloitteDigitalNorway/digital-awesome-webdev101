@@ -12,6 +12,10 @@ class Monitor extends PureComponent {
 
     return (
       <div id={userID} className='Monitor'>
+
+        <div className="top-box">
+          <textarea value={update[userID] ? update[userID] : ''} onChange={this.updateText}/>
+        </div>
         <h1 className="header" />
 
         <PirateTextBox
@@ -20,9 +24,6 @@ class Monitor extends PureComponent {
           history={history}
         />
 
-        <div className="top-box">
-          <textarea value={update[userID] ? update[userID] : ''} onChange={this.updateText}/>
-        </div>
       </div>
     );
   }

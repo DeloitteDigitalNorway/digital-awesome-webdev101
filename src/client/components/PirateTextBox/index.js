@@ -10,14 +10,17 @@ class PirateTextBox extends PureComponent {
     const { update, history, userID } = this.props;
 
     const selfUpdate = update[userID]
-    ? <SpeachBubble text={translate(update[userID])} classnames={'right'} />
+    ? <CSSTransition timeout={500} classNames="fastFade">
+        <SpeachBubble text={translate(update[userID])} classnames={'right'} />
+      </CSSTransition>
     : null;
 
     let otherUpdate = null;
-
     for(var propt in update){
       if(propt !== userID && update[propt] !== '') {
-        otherUpdate = <SpeachBubble text={translate('...')} classnames={'left update'}/>;
+        otherUpdate = <CSSTransition timeout={500} classNames="fastFade">
+          <SpeachBubble text={'...'} classnames={'left update'}/>
+        </CSSTransition>;
         break;
       }
     }
@@ -32,20 +35,8 @@ class PirateTextBox extends PureComponent {
           ))
         }
 
-        { selfUpdate
-          ? <CSSTransition timeout={500} classNames="fastFade">
-            {selfUpdate}
-            </CSSTransition>
-          : null
-        }
-
-        {
-          otherUpdate
-          ? <CSSTransition timeout={500} classNames="fastFade">
-          {otherUpdate}
-          </CSSTransition>
-          : null
-        }
+        { selfUpdate }
+        { otherUpdate}
       </TransitionGroup>
     );
   }

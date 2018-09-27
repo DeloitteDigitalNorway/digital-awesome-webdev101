@@ -1,6 +1,6 @@
 .SpeachBubble {
 	position: relative;
-	background: #00aabb;
+	background: #bbaaff;
 	border-radius: 20px;
   width: 90%;
   padding: 5%;
@@ -11,7 +11,7 @@
 	font-size: 30px;
 	line-height: 40px;
 	padding: 5px 15px;
-  animation: dotAnimation 1s linear infinite alternate;
+	animation: dotAnimation 1s linear infinite alternate;
 }
 
 .SpeachBubble.left {
@@ -22,6 +22,16 @@
 .SpeachBubble.left.final {
 	width: 80%;
 	left: 2%;
+}
+
+.SpeachBubble.right {
+  background: lightblue;
+  left: 0%;
+}
+
+.SpeachBubble.right.final {
+	width: 80%;
+	left: 8%;
 }
 
 .SpeachBubble.left.final:after {
@@ -37,16 +47,6 @@
 	border-bottom: 0;
 	margin-top: -10px;
 	margin-left: -20px;
-}
-
-.SpeachBubble.right {
-  background: lightblue;
-  left: 0%;
-}
-
-.SpeachBubble.right.final {
-	width: 80%;
-	left: 8%;
 }
 
 .SpeachBubble.right.final:after {

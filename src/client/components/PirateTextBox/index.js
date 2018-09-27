@@ -27,16 +27,8 @@ class PirateTextBox extends PureComponent {
           ))
         }
 
-        { selfUpdate
-          ? selfUpdate
-          : null
-        }
-
-        {
-          otherUpdate
-          ? otherUpdate
-          : null
-        }
+        { selfUpdate }
+        { otherUpdate }
       </div>
     );
   }
